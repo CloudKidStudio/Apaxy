@@ -4,7 +4,14 @@
 
     Theme name: Apaxy
     Theme author: @adamwhitcroft
+
+    midnight blue: #192240;
+    turquoise : #41ebff;
 \*------------------------------------*/
+
+#logo {
+	width:7em;
+}
 @import url('//fonts.googleapis.com/css?family=Open+Sans');
 /* Have to use @import for the font, as you can only specify a single stylesheet */
 * {
@@ -17,11 +24,11 @@
 
 html {
 	min-height:100%;
-	border-top:10px solid #ECEEF1;
-	border-bottom:10px solid #ECEEF1;
-	color:#61666c;
+	color:#192240;
+	background:white;
+	/*background:#192240;*/ /* midnight blue */
 	font-weight:400;
-	font-size:1em;
+	font-size:1.1em;
 	font-family:'Open Sans', sans-serif;
 	line-height:2em;
 }
@@ -33,11 +40,11 @@ code {
 	font-family:consolas,monospace;	
 }
 a {
-	color:#61666c;
+	color:#192240;
 	text-decoration:none;
 }
 a:hover {
-	color:#2a2a2a;
+	/*color:white;*/
 }
 /*------------------------------------*\
     Wrapper
@@ -52,9 +59,9 @@ a:hover {
 \*------------------------------------*/
 .block {
 	font-size:.875em;
-	margin:20px 0;
+	/*margin:20px 0;*/
 	padding:20px;
-	color:#9099A3;
+	color:#daffff;
 }
 /*------------------------------------*\
     Table (directory listing)
@@ -62,40 +69,50 @@ a:hover {
 table {
 	width:100%;
 	border-collapse:collapse;
-	font-size:.875em;
+	font-size:1em;
 }
 tr {
 	outline:0;
 	border:0;
 }
 tr:hover td {
-	background:#f6f6f6;
+	/*background:#41ebff;*/
+
+}
+tr:hover a {
+	color: white;
+	color:#41ebff; /*turquoise*/
 }
 th {
 	text-align:left;
 	font-size:.75em;
-	padding-right:20px;
+	/*padding-right:20px;*/
 }
 /* 2nd Column: Filename */
 th + th {
-	width:65%;
 }
 /* 3rd Column: Last Modified */
 th + th + th {
 }
 /* 4th Column: Size */
 th + th + th + th {
-	width:5%;
 }
 tr td:first-of-type {
 	padding-left:10px;
-	padding-right:10px;
+}
+.indexcollastmod,
+.indexcolsize
+ {
+	display:none;
+}
+.indexhead .indexcolname {
+	display:none;
 }
 td {
 	padding:5px 0;
 	outline:0;
 	border:0;
-	border-bottom:1px solid #edf1f5;
+	border-bottom:1px solid #41ebff;
 	vertical-align:middle;
 	text-align:left;
 	-webkit-transition:background 300ms ease;
@@ -111,12 +128,13 @@ tr.parent a[href^="/"] {
 	color:#9099A3;
 }
 	.parent a[href^="/"]:hover {
-		color:#2281d0;
+		color:#41ebff;
 	}
 /*------------------------------------*\
     Footer
 \*------------------------------------*/
 .footer {
+	display:none;
 	text-align:center;
 	font-size:.75em;
 }
