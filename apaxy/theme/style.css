@@ -21,7 +21,6 @@
 	   -moz-box-sizing:border-box;
 	       box-sizing: border-box; 
 }
-
 html {
 	min-height:100%;
 	color:#192240;
@@ -127,9 +126,12 @@ td a{
 tr.parent a[href^="/"] {
 	color:#9099A3;
 }
-	.parent a[href^="/"]:hover {
-		color:#41ebff;
-	}
+.parent a[href^="/"]:hover {
+	color:#41ebff;
+}
+img {
+	border:none;
+}
 /*------------------------------------*\
     Footer
 \*------------------------------------*/
