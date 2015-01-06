@@ -7,4 +7,6 @@
 
 ##Installation
 * Download and unzip Apaxy
-* Move the contents of the `/apaxy` folder to the folder your projects/apache runs from. NOTE: the `apaxy/` folder includes a hidden file `.htaccess` that must be moved too! 
+* Move the contents of the `/apaxy` folder to the folder your projects/apache runs from
+* Rename the file `htaccess` to `.htaccess` (add a period to the beginning)
+* Click `OK` to the pop-up warning (`.htaccess` is not a hidden file. _ssssh_)
