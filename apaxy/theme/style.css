@@ -1,13 +1,12 @@
-/*------------------------------------*\
-    Apaxy
-    by @adamwhitcroft
+/*    
+Apax by @adamwhitcroft
 
-    Theme name: Apaxy
-    Theme author: @adamwhitcroft
+Theme name: CloudKid
+Theme author: @matteszk
 
-    midnight blue: #192240;
-    turquoise : #41ebff;
-\*------------------------------------*/
+midnight blue: #192240;
+turquoise : #41ebff;
+*/
 
 #logo {
 	width:7em;
@@ -45,26 +44,25 @@ a {
 a:hover {
 	/*color:white;*/
 }
-/*------------------------------------*\
-    Wrapper
-\*------------------------------------*/
+
+
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
 	max-width:500px;
 }
-/*------------------------------------*\
-    Demo block
-\*------------------------------------*/
+/**
+ *	Demo Block
+ */
 .block {
 	font-size:.875em;
 	/*margin:20px 0;*/
 	padding:20px;
 	color:#daffff;
 }
-/*------------------------------------*\
-    Table (directory listing)
-\*------------------------------------*/
+/**
+ *	Table (directory listing)
+ */
 table {
 	width:100%;
 	border-collapse:collapse;
@@ -132,9 +130,15 @@ tr.parent a[href^="/"] {
 img {
 	border:none;
 }
-/*------------------------------------*\
-    Footer
-\*------------------------------------*/
+/**
+ *	Navigation Aid
+ */
+.active {
+	background: #efefef;
+}
+/**
+ *	Footer
+ */
 .footer {
 	display:none;
 	text-align:center;
