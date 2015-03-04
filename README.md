@@ -1,8 +1,9 @@
 #Cloud Kid Customized Apaxy
 
 ##Features
-* Adaptive design = actually usable on your tiny phone
-* Hid the size and last-updated-date columns
+* Adaptive design means: navigation is **actually** usable on your tiny phone
+* Rudimentary keyboard navigation
+* The size and last-updated-date columns are hidden, to reduce clutter (TODO: make these tool tips?)
 * Icons for file types
 
 ##Installation
