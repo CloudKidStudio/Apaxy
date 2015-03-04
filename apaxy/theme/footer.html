@@ -5,91 +5,90 @@
   Apaxy by <a href="https://twitter.com/adamwhitcroft">@adamwhitcroft</a>
 </div>
 <!--/.footer-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
   // Grab the 2nd child and add the parent class. tr:nth-child(2)
   // (turns the first Li alpha down)
   document.getElementsByTagName('tr')[1].className = 'parent';
 
-
   $(document).ready(function() {
 
-  	//get all li elements
-  	var rows = [];
-  	$("tr").each(function(i) {
-  		var tr = $(this);
-  		if (tr.hasClass('indexhead'))
-  			return;
+    //get all li elements
+    var rows = [];
+    $("tr").each(function(i) {
+      var tr = $(this);
+      if (tr.hasClass('indexhead'))
+        return;
 
-  		rows.push(tr);
-  	});
+      rows.push(tr);
+    });
 
-  	var input = '';
-  	var currActive = null;
-  	$(document).keyup(function(e) {
-  		var char = null;
-  		switch (e.keyCode) {
-  			case 13: //enter 
-  				onEnter();
-  				return;
-  				break;
-  			case 38:
-  			case 37:
-  				onBack();
-  				return;
-  				break;
-  			case 189:
-  				char = '-';
-  				break;
-  			case 191:
-  				char = '/'
-  				break;
-  		}
+    var input = '';
+    var currActive = null;
+    $(document).keyup(function(e) {
+      var char = null;
+      switch (e.keyCode) {
+        case 13: //enter 
+          onEnter();
+          return;
+          break;
+        case 37:
+          onBack();
+          return;
+          break;
+        case 189:
+          char = '-';
+          break;
+        case 191:
+          char = '/'
+          break;
+      }
 
-  		if (!char) {
-  			char = String.fromCharCode(event.keyCode);
-  			if (!char.match(/^[-A-Za-z0-9\- _]+$/)) {
-  				return;
-  			}
-  			input += char.toLowerCase();
-  		}
+      if (!char) {
+        char = String.fromCharCode(event.keyCode);
+        if (!char.match(/^[-A-Za-z0-9\- _]+$/)) {
+          return;
+        }
+        input += char.toLowerCase();
+      }
 
-  		var match = checkMatch();
-  		if (!match) {
-  			// Check if another tr is being targeted
-  			input = char.toLowerCase();
-  			match = checkMatch();
-  		}
-  	});
+      var match = checkMatch();
+      if (!match) {
+        // Check if another tr is being targeted
+        input = char.toLowerCase();
+        match = checkMatch();
+      }
+    });
 
-  	function checkMatch() {
-  		var match = false;
-  		for (var i = 0; i < rows.length; i++) {
-  			var tr = rows[i];
-  			var name = tr.find(".indexcolname").text().toLowerCase();
-  			var currChars = name.slice(0, input.length);
-  			if (input == currChars) {
-  				match = true;
-  				// clear highlight from last active
-  				if (currActive) currActive.removeClass('active');
-  				//set new active
-  				currActive = tr;
-  				tr.addClass('active');
-  				break;
-  			}
-  		}
-  		return match;
-  	}
+    function checkMatch() {
+      var match = false;
+      for (var i = 0; i < rows.length; i++) {
+        var tr = rows[i];
+        var name = tr.find(".indexcolname").text().toLowerCase();
+        var currChars = name.slice(0, input.length);
+        if (input == currChars) {
+          match = true;
+          // clear highlight from last active
+          if (currActive) currActive.removeClass('active');
+          //set new active
+          currActive = tr;
+          tr.addClass('active');
+          $(tr).scrollIntoView();
+          break;
+        }
+      }
+      return match;
+    }
 
-  	function onBack() {
-  		window.location.href = rows[0].find(".indexcolname").find('a')[0].href;
-  	}
+    function onBack() {
+      window.location.href = rows[0].find(".indexcolname").find('a')[0].href;
+    }
 
-  	function onEnter(e) {
-  		if (currActive) {
-  			window.location.href = currActive.find(".indexcolname").find('a')[0].href;
-  		}
-  	}
+    function onEnter(e) {
+      if (currActive) {
+        window.location.href = currActive.find(".indexcolname").find('a')[0].href;
+      }
+    }
   });
 </script>
